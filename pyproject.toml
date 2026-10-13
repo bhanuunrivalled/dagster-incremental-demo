@@ -1,0 +1,26 @@
+[build-system]
+requires = ["hatchling>=1.27,<2"]
+build-backend = "hatchling.build"
+
+[project]
+name = "local-orders-pipeline"
+version = "0.1.0"
+description = "A local Dagster pipeline with transactional incremental processing"
+requires-python = ">=3.12,<3.13"
+dependencies = ["dagster==1.13.26", "dagster-webserver==1.13.26"]
+
+[dependency-groups]
+dev = ["pytest>=8,<10"]
+
+[project.scripts]
+orders-demo = "orders_demo.cli:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/orders_demo"]
+
+[tool.dagster]
+module_name = "orders_demo.definitions"
+code_location_name = "local_orders"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

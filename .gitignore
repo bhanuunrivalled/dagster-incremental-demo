@@ -1,0 +1,23 @@
+# Separate upstream checkout; keep project notes and pipeline code in this repository.
+/rea-source/
+/.venv/
+/.cache/
+/.local/
+/.pytest_cache/
+**/__pycache__/
+*.egg-info/
+# Local research, credentials, and runtime artifacts are not part of the demo.
+/REA-SETUP.md
+/.aws/
+/.codex/
+/.agents/
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.sqlite*
+*.db
+.DS_Store
+/dist/
+/build/

@@ -1,0 +1,5 @@
+[
+  {"event_id": "initial-001", "order_id": "ORD-001", "version": 1, "order_date": "2026-10-12", "amount_cents": 12000},
+  {"event_id": "initial-002", "order_id": "ORD-002", "version": 1, "order_date": "2026-10-12", "amount_cents": 8000},
+  {"event_id": "initial-003", "order_id": "ORD-003", "version": 1, "order_date": "2026-10-13", "amount_cents": 5000}
+]
