@@ -21,3 +21,6 @@
 .DS_Store
 /dist/
 /build/
+/spark-warehouse/
+/metastore_db/
+derby.log

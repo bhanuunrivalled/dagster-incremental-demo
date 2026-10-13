@@ -1,11 +1,11 @@
 {
-  "name": "Dagster incremental demo",
+  "name": "Foundry-style pipeline demo",
   "build": { "dockerfile": "Dockerfile" },
   "remoteUser": "vscode",
   "containerEnv": {
-    "DAGSTER_HOME": "${containerWorkspaceFolder}/.local/dagster"
+    "DAGSTER_HOME": "${containerWorkspaceFolder}/.local/foundry-dagster"
   },
-  "postCreateCommand": "uv sync --frozen && uv run orders-demo init",
+  "postCreateCommand": "uv sync --frozen && uv run foundry-demo init",
   "forwardPorts": [3000],
   "portsAttributes": {
     "3000": { "label": "Dagster lineage", "onAutoForward": "notify" }

@@ -7,20 +7,25 @@ name = "local-orders-pipeline"
 version = "0.1.0"
 description = "A local Dagster pipeline with transactional incremental processing"
 requires-python = ">=3.12,<3.13"
-dependencies = ["dagster==1.13.26", "dagster-webserver==1.13.26"]
+dependencies = [
+    "dagster==1.13.26",
+    "dagster-webserver==1.13.26",
+    "pyspark==3.5.7",
+]
 
 [dependency-groups]
 dev = ["pytest>=8,<10"]
 
 [project.scripts]
 orders-demo = "orders_demo.cli:main"
+foundry-demo = "foundry_compat.cli:main"
 
 [tool.hatch.build.targets.wheel]
-packages = ["src/orders_demo"]
+packages = ["src/orders_demo", "src/transforms", "src/foundry_compat", "src/foundry_example"]
 
 [tool.dagster]
-module_name = "orders_demo.definitions"
-code_location_name = "local_orders"
+module_name = "foundry_example.definitions"
+code_location_name = "foundry_style"
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
